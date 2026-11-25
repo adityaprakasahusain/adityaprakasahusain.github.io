@@ -1,8 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Aditya Prakasa | Electrical & MEP Portfolio">
+<meta property="og:description" content="MEP engineer and AutoCAD drafter. Quantity takeoff, BOQ, single line diagrams. Open for remote work.">
+<meta property="og:image" content="https://adityaprakasahusain.github.io/office-03.jpg">
+<meta property="og:url" content="https://adityaprakasahusain.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <title>Aditya Prakasa Portfolio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Electrical & MEP estimator and AutoCAD drafter. Quantity takeoff, BOQ, single line diagrams. Open for remote work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Archivo:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Archivo:wght@500;800&family=Inter:wght@400;500;600&display=swap">
 <style>
 /* Layout: a drawing sheet. Hero framed like a title block, projects as sheet sets, details in tidy two-column rows. */
 :root{
@@ -11,9 +22,11 @@
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#12161b;--sheet:#1a2027;--ink:#e7eaee;--muted:#9aa3ad;--line:#333c46;--accent:#f0bd1c;--accent-ink:#12161b;--soft:#20272f;color-scheme:dark}}
 :root[data-theme="dark"]{--paper:#12161b;--sheet:#1a2027;--ink:#e7eaee;--muted:#9aa3ad;--line:#333c46;--accent:#f0bd1c;--accent-ink:#12161b;--soft:#20272f;color-scheme:dark}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+img{max-width:100%}
 body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
 .wrap{max-width:1040px;margin:0 auto;display:grid;gap:40px}
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
@@ -83,7 +96,16 @@ footer{font-size:.82rem;color:var(--muted)}
 .lb-img.zoom{place-items:start}
 .lb-img.zoom img{max-width:none;max-height:none;width:2000px;cursor:zoom-out}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-</style>
+:root{--paper:#f4f2ec;--sheet:#fffdf8;--ink:#1f3a2e;--muted:#5e6b62;--line:#ddd8cc;--accent:#c8a24a;--accent-ink:#1f3a2e;
+--f-display:"Archivo",system-ui,sans-serif;--f-body:"Inter",system-ui,sans-serif}
+h1,h2,.tb-main h1{font-weight:800;letter-spacing:-.01em}
+.tb{background:#1f3a2e;color:#f4f2ec;border:0}.tb .label,.tb .intro{color:#c3cdbf}.tb-side{border-left:1px solid #33503f}.cell{border-bottom:1px solid #33503f}.cell .v,.cell .big{color:#f4f2ec}
+.contact{border:0;background:#1f3a2e;color:#f4f2ec}.contact .note{color:#c3cdbf}.contact h2{color:#f4f2ec}
+@media (max-width:720px){.tb-side{border-top:1px solid #33503f}.cell{border-right:1px solid #33503f}}
+.status{background:transparent;color:#ffffff;border:1.5px solid #ffffff}.status i{background:#22c55e}</style>
+</head>
+<body>
+
 
 <div class="wrap">
 
@@ -222,3 +244,6 @@ footer{font-size:.82rem;color:var(--muted)}
   document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
 })();
 </script>
+
+</body>
+</html>
