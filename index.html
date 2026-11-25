@@ -1,0 +1,224 @@
+<title>Aditya Prakasa Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Electrical & MEP estimator and AutoCAD drafter. Quantity takeoff, BOQ, single line diagrams. Open for remote work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Archivo:wght@600;800&display=swap">
+<style>
+/* Layout: a drawing sheet. Hero framed like a title block, projects as sheet sets, details in tidy two-column rows. */
+:root{
+  --paper:#f6f7f5; --sheet:#ffffff; --ink:#1b2129; --muted:#5b6470; --line:#cfd4d9; --accent:#d9a404; --accent-ink:#1b2129; --soft:#eef0ec;
+  --f-display:"Archivo","IBM Plex Sans",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#12161b;--sheet:#1a2027;--ink:#e7eaee;--muted:#9aa3ad;--line:#333c46;--accent:#f0bd1c;--accent-ink:#12161b;--soft:#20272f;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#12161b;--sheet:#1a2027;--ink:#e7eaee;--muted:#9aa3ad;--line:#333c46;--accent:#f0bd1c;--accent-ink:#12161b;--soft:#20272f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:16px/1.6 var(--f-body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h2{font-size:1.5rem;font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+.label{font:500 .72rem/1.2 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* title-block hero */
+.tb{background:var(--sheet);border:2px solid var(--ink);display:grid;grid-template-columns:1fr 280px}
+.tb-main{padding:28px;display:grid;gap:14px;align-content:start;min-width:0}
+.tb-main h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800}
+.role{font-size:1.15rem;font-weight:500}
+.intro{color:var(--muted);max-width:60ch}
+.status{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);font:600 .85rem var(--f-mono);padding:6px 12px;width:max-content;max-width:100%}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent-ink)}
+.tb-side{border-left:2px solid var(--ink);display:grid;grid-template-rows:repeat(4,auto) 1fr}
+.cell{padding:10px 14px;border-bottom:1px solid var(--ink);display:grid;gap:4px}
+.cell:last-child{border-bottom:0;align-content:end}
+.cell .v{font:500 1rem var(--f-mono)}
+.cell .big{font:800 2.2rem/1 var(--f-display)}
+@media (max-width:720px){.tb{grid-template-columns:1fr}.tb-side{border-left:0;border-top:2px solid var(--ink);grid-template-columns:1fr 1fr;grid-template-rows:auto}.cell{border-right:1px solid var(--ink)}.cell:nth-child(2n){border-right:0}.cell:last-child{grid-column:1/-1;border-right:0}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;border-top:1px solid var(--line)}
+.svc div{padding:16px 16px 18px 0;border-bottom:1px solid var(--line);display:grid;gap:6px;min-width:0}
+.svc b{font-weight:600}
+.svc span{color:var(--muted);font-size:.95rem}
+.section{display:grid;gap:18px}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
+/* projects */
+.proj{background:var(--sheet);border:1px solid var(--line);padding:24px;display:grid;gap:18px}
+.proj-top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+@media (max-width:420px){.sheets{grid-template-columns:1fr 1fr}.proj{padding:16px}}
+@media (max-width:720px){.proj-top{grid-template-columns:1fr}}
+.proj-top p{color:var(--muted)}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:.95rem}
+.facts dt{font:500 .75rem/1.7 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.facts dd{margin:0;font-variant-numeric:tabular-nums}
+.sheets{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.sheet{all:unset;cursor:zoom-in;display:grid;gap:6px;align-content:start;min-width:0}
+.sheet img{width:100%;aspect-ratio:1.414;object-fit:cover;object-position:center;background:#fff;border:1px solid var(--line);display:block;transition:border-color .15s}
+.sheet.port img{object-position:top}
+.sheet:hover img,.sheet:focus-visible img{border-color:var(--accent)}
+.sheet:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.cap{font-size:.85rem;color:var(--muted);display:flex;gap:8px;min-width:0}
+.cap b{font:500 .8rem var(--f-mono);color:var(--ink);flex:none}
+.note{font-size:.85rem;color:var(--muted)}
+/* experience */
+.exp{display:grid;border-top:1px solid var(--line)}
+.exp div{display:grid;grid-template-columns:170px 1fr;gap:4px 20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.exp .yr{font:500 .9rem var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.exp span{color:var(--muted);font-size:.95rem}
+@media (max-width:560px){.exp div{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1px solid var(--line);padding:4px 10px;font-size:.88rem;background:var(--sheet)}
+/* contact */
+.contact{border:2px solid var(--ink);background:var(--sheet);padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:600;padding:12px 18px;text-decoration:none}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+footer{font-size:.82rem;color:var(--muted)}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,12,15,.94);z-index:50;display:grid;grid-template-rows:auto 1fr;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.lb-bar{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 14px;color:#e7eaee;font-size:.9rem}
+.lb-bar button{background:#2a323b;color:#fff;border:0;padding:8px 14px;font:inherit;cursor:pointer}
+.lb-bar button:focus-visible{outline:2px solid #f0bd1c}
+.lb-img{overflow:auto;display:grid;place-items:center;padding:0 8px 8px}
+.lb-img img{max-width:100%;max-height:100%;background:#fff;cursor:zoom-in}
+.lb-img.zoom{place-items:start}
+.lb-img.zoom img{max-width:none;max-height:none;width:2000px;cursor:zoom-out}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="tb">
+  <div class="tb-main">
+    <span class="label">Portfolio · Electrical &amp; MEP</span>
+    <h1>Aditya Prakasa</h1>
+    <p class="role">MEP Engineer · AutoCAD Drafter · Quantity Takeoff &amp; BOQ</p>
+    <p class="intro">Electrical and MEP professional with 10+ years in hospitals, data centers, factories and offices in Indonesia. I turn drawings into clean takeoffs, bills of quantities and cost estimates, and I draft electrical layouts and single line diagrams in AutoCAD.</p>
+    <span class="status"><i></i>Open for remote work</span>
+  </div>
+  <div class="tb-side">
+    <div class="cell"><span class="label">Based in</span><span class="v">Bandung, Indonesia</span></div>
+    <div class="cell"><span class="label">Time zone</span><span class="v">GMT+7 (WIB)</span></div>
+    <div class="cell"><span class="label">Languages</span><span class="v">Indonesian, English</span></div>
+    <div class="cell"><span class="label">Standards</span><span class="v">IEC 60364 · PUIL 2020 · NRM2</span></div>
+    <div class="cell"><span class="label">Experience</span><span class="big">10+ yrs</span></div>
+  </div>
+</header>
+
+<section class="section">
+  <h2>What I can do for you</h2>
+  <div class="svc">
+    <div><b>Quantity takeoff (MTO)</b><span>From PDF or AutoCAD: luminaires, sockets, cable, conduit, tray, panels. Color-coded mark-ups so every number can be traced.</span></div>
+    <div><b>Bill of Quantities</b><span>Formula-based Excel in NRM2 / CSI MasterFormat layout, or your own format. Ready for pricing.</span></div>
+    <div><b>Cost estimate (RAB)</b><span>Separate material and labor breakdowns, based on Indonesian unit price analysis (AHSP) or your rates.</span></div>
+    <div><b>Electrical drafting</b><span>Lighting, power, cable tray, fire alarm and ELV layouts, plotted A3 with a consistent title block.</span></div>
+    <div><b>SLD &amp; load schedule</b><span>Single line diagrams with voltage drop and phase balance checked circuit by circuit.</span></div>
+    <div><b>Drawing review</b><span>Design drawing (DED) review against PUIL 2020 and SNI, with a clear list of findings.</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="head"><h2>Sample projects</h2><span class="note">Tap any sheet to enlarge.</span></div>
+
+  <article class="proj">
+    <div class="proj-top">
+      <div style="display:grid;gap:10px">
+        <span class="label">Project 01 · 7 sheets</span>
+        <h3>Office Fit-Out Electrical: CAD Drawings, Takeoff &amp; NRM2 BOQ</h3>
+        <p>Complete electrical package for a 20 × 12 m single-storey office fit-out designed to IEC 60364. Drawings, takeoff mark-ups and BOQ all come from one data set and are cross-checked against each other. Fictional project prepared for portfolio purposes.</p>
+      </div>
+      <dl class="facts">
+        <dt>Role</dt><dd>Electrical designer &amp; quantity estimator</dd>
+        <dt>Load</dt><dd>12 circuits, 3-phase, 14.8 kW, unbalance 3.4%</dd>
+        <dt>Counts</dt><dd>64 luminaires, 27 double sockets, 11 switches, 6 AC isolators</dd>
+        <dt>Lengths</dt><dd>612 m cable, 426 m conduit, 21 m cable tray</dd>
+        <dt>Tools</dt><dd>AutoCAD, Excel</dd>
+      </dl>
+    </div>
+    <div class="sheets">
+<button class="sheet" data-full="office-00.jpg" data-cap="QT-01 · Takeoff mark-up, lighting"><img src="office-00-t.jpg" alt="QT-01 Takeoff mark-up, lighting" loading="lazy"><span class="cap"><b>QT-01</b>Takeoff mark-up, lighting</span></button>
+<button class="sheet" data-full="office-01.jpg" data-cap="E-01 · Lighting layout"><img src="office-01-t.jpg" alt="E-01 Lighting layout" loading="lazy"><span class="cap"><b>E-01</b>Lighting layout</span></button>
+<button class="sheet" data-full="office-02.jpg" data-cap="E-02 · Small power &amp; AC layout"><img src="office-02-t.jpg" alt="E-02 Small power &amp; AC layout" loading="lazy"><span class="cap"><b>E-02</b>Small power &amp; AC layout</span></button>
+<button class="sheet" data-full="office-03.jpg" data-cap="E-03 · Single line diagram &amp; load schedule"><img src="office-03-t.jpg" alt="E-03 Single line diagram &amp; load schedule" loading="lazy"><span class="cap"><b>E-03</b>Single line diagram &amp; load schedule</span></button>
+<button class="sheet" data-full="office-04.jpg" data-cap="QT-02 · Takeoff mark-up, power &amp; AC"><img src="office-04-t.jpg" alt="QT-02 Takeoff mark-up, power &amp; AC" loading="lazy"><span class="cap"><b>QT-02</b>Takeoff mark-up, power &amp; AC</span></button>
+<button class="sheet port" data-full="office-05.jpg" data-cap="BOQ · Bill of quantities, page 1"><img src="office-05-t.jpg" alt="BOQ Bill of quantities, page 1" loading="lazy"><span class="cap"><b>BOQ</b>Bill of quantities, page 1</span></button>
+<button class="sheet port" data-full="office-06.jpg" data-cap="BOQ · Bill of quantities, page 2"><img src="office-06-t.jpg" alt="BOQ Bill of quantities, page 2" loading="lazy"><span class="cap"><b>BOQ</b>Bill of quantities, page 2</span></button>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div class="proj-top">
+      <div style="display:grid;gap:10px">
+        <span class="label">Project 02 · 11 sheets + BOQ</span>
+        <h3>Hospital Admin Floor: Electrical &amp; ELV Drawings + BOQ</h3>
+        <p>Full electrical and ELV drawing set for a hospital administration floor, redrawn in AutoCAD from as-built data. Includes lighting, power, cable tray, SLD and panel load schedule, fire alarm, public address, telephone/data, CCTV, ELV riser and typical details. Client identity removed.</p>
+      </div>
+      <dl class="facts">
+        <dt>Role</dt><dd>Electrical / MEP drafter &amp; quantity surveyor</dd>
+        <dt>Sheets</dt><dd>11 × A3, plans at 1:250</dd>
+        <dt>Counts</dt><dd>235 luminaires, 152 sockets, 9 AC units, 9 CCTV cameras</dd>
+        <dt>Fire alarm</dt><dd>3 zones, 34 smoke + 5 heat detectors</dd>
+        <dt>BOQ</dt><dd>NRM2 layout, 11 CSI sections, QTO per circuit</dd>
+      </dl>
+    </div>
+    <div class="sheets">
+<button class="sheet" data-full="hosp-01.jpg" data-cap="E-01 · Lighting layout"><img src="hosp-01-t.jpg" alt="E-01 Lighting layout" loading="lazy"><span class="cap"><b>E-01</b>Lighting layout</span></button>
+<button class="sheet" data-full="hosp-02.jpg" data-cap="E-02 · Small power layout"><img src="hosp-02-t.jpg" alt="E-02 Small power layout" loading="lazy"><span class="cap"><b>E-02</b>Small power layout</span></button>
+<button class="sheet" data-full="hosp-03.jpg" data-cap="E-03 · Cable tray &amp; panel layout"><img src="hosp-03-t.jpg" alt="E-03 Cable tray &amp; panel layout" loading="lazy"><span class="cap"><b>E-03</b>Cable tray &amp; panel layout</span></button>
+<button class="sheet" data-full="hosp-04.jpg" data-cap="E-04 · Single line diagram"><img src="hosp-04-t.jpg" alt="E-04 Single line diagram" loading="lazy"><span class="cap"><b>E-04</b>Single line diagram</span></button>
+<button class="sheet" data-full="hosp-05.jpg" data-cap="E-05 · Panel load schedule"><img src="hosp-05-t.jpg" alt="E-05 Panel load schedule" loading="lazy"><span class="cap"><b>E-05</b>Panel load schedule</span></button>
+<button class="sheet" data-full="hosp-06.jpg" data-cap="FA-01 · Fire alarm layout"><img src="hosp-06-t.jpg" alt="FA-01 Fire alarm layout" loading="lazy"><span class="cap"><b>FA-01</b>Fire alarm layout</span></button>
+<button class="sheet" data-full="hosp-07.jpg" data-cap="PA-01 · Public address layout"><img src="hosp-07-t.jpg" alt="PA-01 Public address layout" loading="lazy"><span class="cap"><b>PA-01</b>Public address layout</span></button>
+<button class="sheet" data-full="hosp-08.jpg" data-cap="TD-01 · Telephone &amp; data layout"><img src="hosp-08-t.jpg" alt="TD-01 Telephone &amp; data layout" loading="lazy"><span class="cap"><b>TD-01</b>Telephone &amp; data layout</span></button>
+<button class="sheet" data-full="hosp-09.jpg" data-cap="SC-01 · CCTV layout"><img src="hosp-09-t.jpg" alt="SC-01 CCTV layout" loading="lazy"><span class="cap"><b>SC-01</b>CCTV layout</span></button>
+<button class="sheet" data-full="hosp-10.jpg" data-cap="ELV-01 · ELV riser schematic"><img src="hosp-10-t.jpg" alt="ELV-01 ELV riser schematic" loading="lazy"><span class="cap"><b>ELV-01</b>ELV riser schematic</span></button>
+<button class="sheet" data-full="hosp-11.jpg" data-cap="DT-01 · Typical installation details"><img src="hosp-11-t.jpg" alt="DT-01 Typical installation details" loading="lazy"><span class="cap"><b>DT-01</b>Typical installation details</span></button>
+<button class="sheet port" data-full="hosp-12.jpg" data-cap="BOQ · BOQ summary"><img src="hosp-12-t.jpg" alt="BOQ BOQ summary" loading="lazy"><span class="cap"><b>BOQ</b>BOQ summary</span></button>
+<button class="sheet port" data-full="hosp-13.jpg" data-cap="BOQ · BOQ, page 1"><img src="hosp-13-t.jpg" alt="BOQ BOQ, page 1" loading="lazy"><span class="cap"><b>BOQ</b>BOQ, page 1</span></button>
+<button class="sheet" data-full="hosp-14.jpg" data-cap="QTO · Quantity takeoff, small power"><img src="hosp-14-t.jpg" alt="QTO Quantity takeoff, small power" loading="lazy"><span class="cap"><b>QTO</b>Quantity takeoff, small power</span></button>
+<button class="sheet port" data-full="hosp-15.jpg" data-cap="QTO · Quantity takeoff, fire alarm &amp; ELV"><img src="hosp-15-t.jpg" alt="QTO Quantity takeoff, fire alarm &amp; ELV" loading="lazy"><span class="cap"><b>QTO</b>Quantity takeoff, fire alarm &amp; ELV</span></button>
+    </div>
+  </article>
+</section>
+
+<section class="section">
+  <h2>Experience</h2>
+  <div class="exp">
+    <div><span class="yr">2024 – now</span><p><b>MEP Site Manager</b><br><span>MEP contractor, Bandung. 15+ MEP and HVAC projects from planning to handover, including data hall electrical works and hospital ICU isolation rooms.</span></p></div>
+    <div><span class="yr">2020 – now</span><p><b>Freelance MEP Estimator</b><br><span>Quotations, BOQ and cost estimates for 30+ projects: hospitals, a university campus, apartments, government offices, bank branches, a data hall.</span></p></div>
+    <div><span class="yr">2018 – 2024</span><p><b>Electrical Technician, Hospital Engineering</b><br><span>Transformers, generators, LV panels, fire alarm, CCTV, sound system, hydrant and AC in a private hospital.</span></p></div>
+    <div><span class="yr">2015 – 2018</span><p><b>Electrical Technician</b><br><span>Panel assembly, field supervision, and plant maintenance in manufacturing.</span></p></div>
+  </div>
+  <div class="chips">
+    <span>AutoCAD</span><span>Excel</span><span>Quantity Surveying</span><span>Bill of Quantities</span><span>Single Line Diagram</span><span>Lighting Design</span><span>Fire Alarm &amp; ELV</span><span>Licensed Diesel Engine Operator, Class 1 (K3)</span><span>AK3 Umum (General OHS)</span>
+  </div>
+</section>
+
+<section class="contact">
+  <div style="display:grid;gap:6px;min-width:0">
+    <h2>Have drawings that need quantities?</h2>
+    <p class="note">Send me a message on Threads with your scope and deadline.</p>
+  </div>
+  <a class="btn" href="https://www.threads.net/@adityaprakasahusain" target="_blank" rel="noopener">Message @adityaprakasahusain</a>
+</section>
+
+<footer>Sample drawings shown at reduced resolution. Project data is fictional or anonymized. © 2026 Aditya Prakasa.</footer>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Sheet preview">
+  <div class="lb-bar"><button id="lb-prev" aria-label="Previous sheet">‹ Prev</button><span id="lb-cap"></span><span style="display:flex;gap:8px"><button id="lb-next" aria-label="Next sheet">Next ›</button><button id="lb-close" aria-label="Close">Close ✕</button></span></div>
+  <div class="lb-img" id="lb-box"><img id="lb-img" alt=""></div>
+</div>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.sheet')),i=0,lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),box=document.getElementById('lb-box'),last=null;
+  function show(n){i=(n+items.length)%items.length;var b=items[i];img.src=b.dataset.full;img.alt=b.dataset.cap;cap.textContent=b.dataset.cap;box.classList.remove('zoom');box.scrollTop=0;box.scrollLeft=0}
+  items.forEach(function(b,n){b.addEventListener('click',function(){last=b;show(n);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lb-close').focus()})});
+  function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus()}
+  document.getElementById('lb-close').onclick=close;
+  document.getElementById('lb-prev').onclick=function(){show(i-1)};
+  document.getElementById('lb-next').onclick=function(){show(i+1)};
+  img.onclick=function(){box.classList.toggle('zoom')};
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
+})();
+</script>
